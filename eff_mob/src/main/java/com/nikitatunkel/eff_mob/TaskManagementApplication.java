@@ -1,4 +1,4 @@
-package com.nikitatunkel.eff_mob;
+package main.java.com.nikitatunkel.eff_mob;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
