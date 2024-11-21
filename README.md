@@ -34,29 +34,25 @@ Task Management System - это веб-приложение для управл�
 
 ### 1. Клонирование репозитория
 
-```bash
+
 git clone https://github.com/yourusername/task-management.git
 cd task-management
 
-Сборка и запуск приложения
+### 2. Сборка и запуск приложения
 Соберите проект с помощью Maven:
-bash
 
 mvn clean install
 Запустите приложение:
-bash
 
 mvn spring-boot:run
 Приложение будет доступно по адресу http://localhost:8080.
 
-Настройка базы данных
+### 3. Настройка базы данных
 Создайте базу данных в PostgreSQL:
-sql
 CREATE DATABASE task_management;
 CREATE USER task_user WITH ENCRYPTED PASSWORD 'password';
 GRANT ALL PRIVILEGES ON DATABASE task_management TO task_user;
 Настройте подключение к базе данных в src/main/resources/application.yml:
-yaml
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/task_management
@@ -79,7 +75,7 @@ mvn spring-boot:run
 Для выполнения всех тестов используйте команду:
 mvn test
 
-Использование
+### 4. Использование
 API
 Регистрация пользователя: POST /api/auth/register
 Аутентификация пользователя: POST /api/auth/login
@@ -87,32 +83,3 @@ API
 Получение всех задач: GET /api/tasks
 Обновление задачи: PUT /api/tasks/{id}
 Удаление задачи: DELETE /api/tasks/{id}
-
-Примеры запросов
-
-Регистрация:
-POST /api/auth/register
-{
-  "username": "user1",
-  "password": "password",
-  "email": "user1@example.com"
-}
-Аутентификация:
-POST /api/auth/login
-{
-  "username": "user1",
-  "password": "password"
-}
-Создание задачи:
-POST /api/tasks
-{
-  "title": "New Task",
-  "description": "Task description",
-  "status": "OPEN",
-  "assigneeId": 2
-}
-
-
-### Пояснения:
-- В разделе "Установка и запуск" указаны команды для настройки, сборки и запуска приложения.
-- В разделе "Использование" описаны основные API методы с примерами запросов.
